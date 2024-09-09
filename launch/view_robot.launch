@@ -1,0 +1,3 @@
+<launch>
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find utexas_warthog_accessories)/rviz/robot.rviz" />
+</launch>

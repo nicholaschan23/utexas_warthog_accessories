@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+
+<robot name="utexas_assembly"
+    xmlns:xacro="http://www.ros.org/wiki.xacro">
+
+    <!-- Include the warthog URDF -->
+    <xacro:include filename="$(find warthog_description)/urdf/warthog.urdf.xacro" />
+
+    <!-- Define new lidar -->
+    <xacro:macro name="add_lidar" params="lidar_name parent_link x=0 y=0 z=0 roll=0 pitch=0 yaw=0">
+        <!-- Define a new link for the lidar -->
+        <link name="${lidar_name}_link">
+            <visual>
+                <geometry>
+                    <cylinder radius="${0.0889/2}" length="0.1016" />
+                </geometry>
+                <material name="lidar_material">
+                    <color rgba="0 0 1 1" />
+                </material>
+            </visual>
+        </link>
+
+        <!-- Define a joint to attach the lidar to the parent link -->
+        <joint name="${lidar_name}_joint" type="fixed">
+            <parent link="${parent_link}" />
+            <child link="${lidar_name}_link" />
+
+            <!-- Position and orientation of the lidar -->
+            <origin xyz="${x} ${y} ${z}" rpy="${roll} ${pitch} ${yaw}" />
+        </joint>
+    </xacro:macro>
+
+    <!-- Use the macro to add the lidar to a specific link -->
+    <xacro:add_lidar lidar_name="front_lidar" parent_link="bulkhead_front_mount_link" x="0" y="0" z="0" />
+</robot>
