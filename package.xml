@@ -51,14 +51,12 @@
   <buildtool_depend>catkin</buildtool_depend>
 
   <build_depend>roslaunch</build_depend>
+
+  <exec_depend>gmapping</exec_depend>
+  <exec_depend>ouster_ros</exec_depend>
+  <exec_depend>pointcloud_to_laserscan</exec_depend>
   <exec_depend>urdf</exec_depend>
-  <!-- <exec_depend>warthog_viz</exec_depend> -->
   <exec_depend>xacro</exec_depend>
-  <!-- <exec_depend>joint_state_publisher</exec_depend>
-  <exec_depend>joint_state_publisher_gui</exec_depend>
-  <exec_depend>rqt_console</exec_depend>
-  <exec_depend>rqt_gui</exec_depend>
-  <exec_depend>rqt_robot_monitor</exec_depend> -->
   <!-- <exec_depend>rviz</exec_depend> -->
 
   <!-- The export tag contains other, unspecified, tags -->

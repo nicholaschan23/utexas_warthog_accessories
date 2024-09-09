@@ -12,4 +12,13 @@
         <arg name="timestamp_mode" value="TIME_FROM_ROS_TIME" />
         <arg name="viz" value="false" />
     </include>
+
+    <!-- SLAM  -->
+    <node pkg="pointcloud_to_laserscan" type="pointcloud_to_laserscan_node" name="pointcloud_to_laserscan">
+        <remap from="cloud_in" to="ouster/points"/>
+        <rosparam>
+            range_max: 100.0
+        </rosparam>
+    </node>
+    <node pkg="gmapping" type="slam_gmapping" name="slam_gmapping" output="screen" />
 </launch>
