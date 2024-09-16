@@ -8,9 +8,9 @@ project(utexas_warthog_accessories)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
-  gmapping
-  ouster_ros
-  pointcloud_to_laserscan
+  # gmapping
+  # ouster_ros
+  # pointcloud_to_laserscan
   roslaunch
 )
 

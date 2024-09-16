@@ -1,7 +1,6 @@
 <launch>
     <!-- Set environment variables -->
-    <env name="ROS_MASTER_URI" value="http://http://cpr-w200-0094:11311" />
-    <env name="WARTHOG_BULKHEAD" value="1" />
+    <env name="ROS_MASTER_URI" value="http://192.168.131.1:11311" />
 
     <node name="rviz" pkg="rviz" type="rviz" args="-d $(find utexas_warthog_accessories)/rviz/robot.rviz" />
 </launch>
